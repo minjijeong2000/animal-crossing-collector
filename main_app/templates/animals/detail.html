@@ -104,15 +104,15 @@
     </div>
     <h3>{{ animal.name }}'s Fruits</h3>
     <div class="subsection-content">
-      {% if animal.toys.count %}
-        {% for toy in animal.toys.all %}
+      {% if animal.fruits.count %}
+        {% for animal in animal.fruits.all %}
           <div class="toy-container">
             <div 
               class="color-block"
-              style="background-color: {{ toy.color }}"
+              style="background-color: {{ fruit.color }}"
             ></div>
-            <a href="{% url 'toys_detail' toy.id %}">
-              <p>A {{ toy.color }} {{ toy.name }}</p>
+            <a href="{% url 'fruits_detail' fruit.id %}">
+              <p>A {{ fruit.color }} {{ fruit.name }}</p>
             </a>
           </div>
         {% endfor %}
@@ -122,17 +122,17 @@
     </div>
     <h3>Available Fruits</h3>
     <div class="subsection-content">
-      {% if toys.count %}
-        {% for toy in toys.all %}
+      {% if fruits.count %}
+        {% for fruit in fruits.all %}
           <div class="toy-container">
             <div 
               class="color-block"
-              style="background-color: {{ toy.color }}"
+              style="background-color: {{ fruit.color }}"
             ></div>
-            <a href="{% url 'toys_detail' toy.id %}">
-              <p>A {{ toy.color }} {{ toy.name }}</p>
+            <a href="{% url 'fruits_detail' fruit.id %}">
+              <p>A {{ fruit.color }} {{ fruit.name }}</p>
             </a>
-            <form action="{% url 'assoc_toy' animal.id toy.id %}" method="post">
+            <form action="{% url 'assoc_fruit' animal.id fruit.id %}" method="post">
               {% csrf_token %}
               <button type="submit" class="btn submit">Give fruit</button>
             </form>
