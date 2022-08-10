@@ -4,12 +4,22 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Animal, Toy
 from .forms import FeedingForm
 from django.views.generic import ListView, DetailView
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
 
 # Add the Cat class & list and view function below the imports
-class AnimalCreate(CreateView):
+class Home(LoginView):
+  template_name = 'home.html'
+  
+class AnimalCreate(LoginRequiredMixin, CreateView):
   model = Animal
   fields = ['name', 'breed', 'description', 'age']
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
   success_url = '/animals/'
   
 class AnimalUpdate(UpdateView):
@@ -39,14 +49,15 @@ class ToyDelete(DeleteView):
   success_url = '/toys/'
 
 # Create your views here.
-def home(request):
-  return render(request, 'home.html')
+# def home(request):
+#   return render(request, 'home.html')
 
 def about(request):
   return render(request, 'about.html')
 
+@login_required
 def animals_index(request):
-  animals = Animal.objects.all()
+  animals = Animal.objects.filter(user=request.user)
   return render(request, 'animals/index.html', {'animals' : animals})
   
 def animals_detail(request, animal_id):
@@ -66,3 +77,17 @@ def add_feeding(request, animal_id):
 def assoc_toy(request, animal_id, toy_id):
   Toy.objects.get(id=animal_id).toys.add(toy_id)
   return redirect('animals_detail', animal_id=animal_id)
+
+def signup(request):
+  error_message = ''
+  if request.method == 'POST':
+    form = UserCreationForm(request.POST)
+    if form.is_valid():
+      user = form.save()
+      login(request, user)
+      return redirect('animals_index')
+    else:
+      error_message = 'Invalid sign up - try again'
+  form = UserCreationForm()
+  context = {'form': form, 'error_message' : error_message}
+  return render (request, 'signup.html', context)
