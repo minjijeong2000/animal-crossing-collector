@@ -1,7 +1,7 @@
 from ast import List
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Animal, Toy
+from .models import Animal, Fruit
 from .forms import FeedingForm
 from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
@@ -30,23 +30,23 @@ class AnimalDelete(DeleteView):
   model = Animal
   success_url = '/animals/'
   
-class ToyCreate(CreateView):
-  model = Toy
+class FruitCreate(CreateView):
+  model = Fruit
   fields = '__all__'
   
-class ToyList(ListView):
-  model = Toy
+class FruitList(ListView):
+  model = Fruit
   
-class ToyDetail(DetailView):
-  model = Toy
+class FruitDetail(DetailView):
+  model = Fruit
   
-class ToyUpdate(UpdateView):
-  model = Toy
+class FruitUpdate(UpdateView):
+  model = Fruit
   fields = ['name', 'color']
   
-class ToyDelete(DeleteView):
-  model = Toy
-  success_url = '/toys/'
+class FruitDelete(DeleteView):
+  model = Fruit
+  success_url = '/fruits/'
 
 # Create your views here.
 # def home(request):
@@ -62,9 +62,9 @@ def animals_index(request):
   
 def animals_detail(request, animal_id):
   animal = Animal.objects.get(id=animal_id)
-  toys_animal_doesnt_have = Toy.objects.exclude(id__in = animal.toys.all().values_list('id'))
+  fruits_animal_doesnt_have = Fruit.objects.exclude(id__in = animal.fruits.all().values_list('id'))
   feeding_form = FeedingForm()
-  return render(request, 'animals/detail.html', { 'animal' : animal, 'feeding_form' : feeding_form, 'toys': toys_animal_doesnt_have})
+  return render(request, 'animals/detail.html', { 'animal' : animal, 'feeding_form' : feeding_form, 'fruits': fruits_animal_doesnt_have})
 
 def add_feeding(request, animal_id):
   form = FeedingForm(request.POST)
@@ -74,8 +74,8 @@ def add_feeding(request, animal_id):
     new_feeding.save()
   return redirect('animals_detail', animal_id=animal_id)
 
-def assoc_toy(request, animal_id, toy_id):
-  Toy.objects.get(id=animal_id).toys.add(toy_id)
+def assoc_fruit(request, animal_id, fruit_id):
+  Fruit.objects.get(id=animal_id).fruits.add(fruit_id)
   return redirect('animals_detail', animal_id=animal_id)
 
 def signup(request):
