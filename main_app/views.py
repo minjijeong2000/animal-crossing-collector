@@ -62,7 +62,7 @@ def animals_index(request):
   
 def animals_detail(request, animal_id):
   animal = Animal.objects.get(id=animal_id)
-  toys_animal_doesnt_have = TOy.objects.exclude(id__in = animal.toys.all().values_lsit('id'))
+  toys_animal_doesnt_have = Toy.objects.exclude(id__in = animal.toys.all().values_list('id'))
   feeding_form = FeedingForm()
   return render(request, 'animals/detail.html', { 'animal' : animal, 'feeding_form' : feeding_form, 'toys': toys_animal_doesnt_have})
 

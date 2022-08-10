@@ -97,12 +97,12 @@
   </section>
   <section class="toys">
     <div class="subsection-title">
-      <h2>Toys</h2>
+      <h2>Fruits</h2>
       <img src="{% static 'images/string.svg' %}" alt="A ball of string" />
       <img src="{% static 'images/mouse.svg' %}" alt="A mouse" />
       <img src="{% static 'images/fish.svg' %}" alt="A fishy toy" />
     </div>
-    <h3>{{ animal.name }}'s Toys</h3>
+    <h3>{{ animal.name }}'s Fruits</h3>
     <div class="subsection-content">
       {% if animal.toys.count %}
         {% for toy in animal.toys.all %}
@@ -117,10 +117,10 @@
           </div>
         {% endfor %}
       {% else %}
-        <p class="no-toys">{{animal.name}} doesn't have any toys 😞</p>
+        <p class="no-toys">{{animal.name}} doesn't have any fruits 😞</p>
       {% endif %}
     </div>
-    <h3>Available Toys</h3>
+    <h3>Available Fruits</h3>
     <div class="subsection-content">
       {% if toys.count %}
         {% for toy in toys.all %}
@@ -134,13 +134,13 @@
             </a>
             <form action="{% url 'assoc_toy' animal.id toy.id %}" method="post">
               {% csrf_token %}
-              <button type="submit" class="btn submit">Give toy</button>
+              <button type="submit" class="btn submit">Give fruit</button>
             </form>
           </div>
         {% endfor %}
       {% else %}
         <p class="all-toys">
-          {{animal.name}} already has all the available toys 🥳
+          {{animal.name}} already has all the available fruits 🥳
         </p>
       {% endif %}
     </div>

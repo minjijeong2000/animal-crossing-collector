@@ -13,10 +13,10 @@
 
 <section class="page-header">
   <h1>Animal Crossing Character List</h1>
-  <img src="{% static 'images/cool-cat.svg' %}" alt="A cool cat" />
-  <img src="{% static 'images/happy-cat.svg' %}" alt="A happy cat" />
-  <img src="{% static 'images/teacup-cat.svg' %}" alt="A cat in a teacup" />
-  <img src="{% static 'images/cat-in-box.svg' %}" alt="A cat in a box" />
+  <img src="{% static 'images/apple.png' %}" alt="A cool cat" />
+  <img src="{% static 'images/chrissy.png' %}" alt="A happy cat" />
+  <img src="{% static 'images/felicity.png' %}" alt="A cat in a teacup" />
+  <img src="{% static 'images/timmytommy.png' %}" alt="A cat in a box" />
 </section>
 
 <section class="card-container">
@@ -25,10 +25,22 @@
       <a href="{% url 'animals_detail' animal.id %}">
         <div class="card-content">
           <div class="card-img-container">
-            <img 
-              src="{% static 'images/sk8r-boi-cat.svg' %}" 
+            {% if animal.name == 'Apple' %}
+              <img 
+                src="{% static 'images/apple.png' %}" 
+                alt="A skater boy cat"
+              >
+            {% elif animal.name == 'Chrissy' %}
+              <img 
+              src="{% static 'images/chrissy.png' %}" 
               alt="A skater boy cat"
             >
+            {% else %}
+              <img 
+              src="{% static 'images/felicity.png' %}" 
+              alt="A skater boy cat"
+            >
+            {% endif %}
           </div>
           <h2 class="card-title">{{ animal.name }}</h2>
           {% if animal.age > 0 %}

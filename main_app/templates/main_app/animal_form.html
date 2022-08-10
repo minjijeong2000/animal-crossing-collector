@@ -11,8 +11,10 @@
         <h1>Edit {{ animal.name }}</h1>
     {% else %}
         <h1>Add a Character</h1>
-    {% endif %}
-  <img src="{% static 'images/nerd-cat.svg' %}" alt="A cat using a computer"/>
+        {% endif %}
+        <img src="{% static 'images/mrresetti.png' %}" alt="A cat using a computer"/>
+        <hr>
+        <h3><br>Choose between Apple, Chrissy, or Felicity</h3>
 </div>
 {% comment %} 
   Leaving the action empty makes the form post to the same url used to display it

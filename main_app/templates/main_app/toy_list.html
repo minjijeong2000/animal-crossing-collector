@@ -12,7 +12,7 @@
 {% block content %}
 
 <section class="page-header">
-  <h1>All Character Toys</h1>
+  <h1>All Character Fruits</h1>
   <img src="{% static 'images/string.svg' %}" alt="A ball of string" />
   <img src="{% static 'images/mouse.svg' %}" alt="A mouse" />
   <img src="{% static 'images/post.svg' %}" alt="A scratching post" />
@@ -26,7 +26,7 @@
     <a href="{% url 'toys_detail' toy.id %}">
       <div class="card-content">
         <h2>{{ toy.name }}</h2>
-        <p>A {{ toy.color }} toy</p>
+        <p>A {{ toy.color }} fruit</p>
       </div>
     </a>
   </div>

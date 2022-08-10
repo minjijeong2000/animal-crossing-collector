@@ -9,7 +9,7 @@
   <link
     rel="shortcut icon"
     type="image/png"
-    href="{% static 'images/splash.svg' %}"
+    href="{% static 'images/leaf.png' %}"
   >
   <title>Animal Crossing Collector</title>
   <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
@@ -21,8 +21,9 @@
     <div class="header-logo-container">
       <a href="/">
         <img 
-          src="{% static 'images/header-logo.svg' %}"
+          src="{% static 'images/leaf.png' %}"
           alt="The Cat Collector Logo"
+          height="20px"
         >
       </a>
     </div>
@@ -30,9 +31,9 @@
       <ul>
         {% if user.is_authenticated %}
           <li><a href="{% url 'animals_index' %}">All Animal Crossing Characters</a></li>
-          <li><a href="{% url 'toys_index' %}">All Toys</a></li>
+          <li><a href="{% url 'toys_index' %}">All Fruits</a></li>
           <li><a href="{% url 'animals_create' %}">Add a Character</a></li>
-          <li><a href="{% url 'toys_create' %}">Add a Toy</a></li>
+          <li><a href="{% url 'toys_create' %}">Add a Fruit</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'logout' %}">Log out</a></li>
           {% else %}
