@@ -4,7 +4,7 @@
 The following django application is called Animal Crossing Collector! Animal Crossing Collector is an application where you can add your animal crossing characters, feed them, and give them fruits. You can also update them, delete them, create characters, and create fruits. This is the place where you can entertain yourself!
 
 ## Getting Started:
-The following is the link to the [app](https://animal-crossing-collector.herokuapp.com/).
+The following is the link to the [trello](https://trello.com/b/rNxSt1pK/animal-crossing-collector) and the link to the [app](https://animal-crossing-collector.herokuapp.com/).
 ## Technologies Used:
 - ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 - ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
