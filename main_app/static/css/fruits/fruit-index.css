@@ -3,6 +3,10 @@ body{
   background-image: url('../fruits/background1.png'); 
 }
 
+.header-fruit {
+  font-family: 'Patrick Hand', cursive;
+}
+
 .card-container {
     padding: 0 40px;
     display: flex;
