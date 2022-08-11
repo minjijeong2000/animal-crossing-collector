@@ -1,1 +1,1 @@
-web: gunicorn animal-crossing-collector.wsgi
+web: gunicorn animalcrossingcollector.wsgi
