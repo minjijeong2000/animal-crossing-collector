@@ -23,10 +23,25 @@
 
 <section class="cat-container">
   <div class="cat-img">
-    <img 
-      src="{% static 'images/sk8r-boi-cat.svg' %}" 
-      alt="A skater boy cat"
-    >
+    {% if animal.name == 'Apple' %}
+              <img 
+                src="{% static 'images/apple.png' %}" 
+                alt="A skater boy cat"
+                height="300px"
+              >
+            {% elif animal.name == 'Chrissy' %}
+              <img 
+              src="{% static 'images/chrissy.png' %}" 
+              alt="A skater boy cat"
+              height="300px"
+            >
+            {% else %}
+              <img 
+              src="{% static 'images/felicity.png' %}" 
+              alt="A skater boy cat"
+              height="300px"
+            >
+            {% endif %}
   </div>
   <div class="cat-details">
     <h1>{{ animal.name }}</h1>
@@ -47,15 +62,15 @@
     <div class="subsection-title">
       <h2>Feedings</h2>
       <img 
-        src="{% static 'images/cat-cone.svg' %}" 
+        src="{% static 'images/fish.png' %}" 
         alt="An ice cream cone cat"
       />
       <img 
-        src="{% static 'images/cat-onigiri.svg' %}"
+        src="{% static 'images/bread.png' %}"
         alt="A cat as onigiri"
       />
       <img 
-        src="{% static 'images/kitty-kabob.svg' %}" 
+        src="{% static 'images/fishchips.png' %}" 
         alt="A kabob of kittens"
       />
     </div>
@@ -98,9 +113,10 @@
   <section class="toys">
     <div class="subsection-title">
       <h2>Fruits</h2>
-      <img src="{% static 'images/string.svg' %}" alt="A ball of string" />
-      <img src="{% static 'images/mouse.svg' %}" alt="A mouse" />
-      <img src="{% static 'images/fish.svg' %}" alt="A fishy toy" />
+      <img src="{% static 'images/pear.png' %}" alt="A ball of string" />
+      <img src="{% static 'images/peach.png' %}" alt="A mouse" />
+      <img src="{% static 'images/orange.png' %}" alt="A fishy toy" />
+      <img src="{% static 'images/cherry.png' %}" alt="A fishy toy" />
     </div>
     <h3>{{ animal.name }}'s Fruits</h3>
     <div class="subsection-content">

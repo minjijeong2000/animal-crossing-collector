@@ -1,0 +1,1 @@
+web: gunicorn animal-crossing-collector.wsgi
