@@ -8,7 +8,7 @@ body{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    font-family: 'Signika', sans-serif;
+    font-family: 'Patrick Hand', cursive;
   }
   
   .card {

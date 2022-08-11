@@ -3,3 +3,13 @@
     justify-content: center;
     margin: 0 50px;
 }
+h1 {
+    font-family: 'Patrick Hand', cursive;
+}
+p {
+    font-family: 'Patrick Hand', cursive;
+}
+
+.page-content {
+    font-family: 'Patrick Hand', cursive;
+}
