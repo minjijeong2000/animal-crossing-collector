@@ -75,7 +75,7 @@ def add_feeding(request, animal_id):
   return redirect('animals_detail', animal_id=animal_id)
 
 def assoc_fruit(request, animal_id, fruit_id):
-  Fruit.objects.get(id=animal_id).fruits.add(fruit_id)
+  Animal.objects.get(id=animal_id).fruits.add(fruit_id)
   return redirect('animals_detail', animal_id=animal_id)
 
 def signup(request):
