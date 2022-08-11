@@ -2,6 +2,10 @@ body {
   background-image: url('../images/logoBackground.jpeg');
 }
 
+.login {
+  background-color: white;
+}
+
 main {
     display: flex;
     align-items: center;
