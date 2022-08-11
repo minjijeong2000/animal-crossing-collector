@@ -1,8 +1,14 @@
+
+body{
+  background-image: url('../fruits/background1.png'); 
+}
+
 .card-container {
     padding: 0 40px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    font-family: 'Signika', sans-serif;
   }
   
   .card {
@@ -12,6 +18,7 @@
     border: solid 2px;
     box-shadow: var(--card-box-shadow);
     position: relative;
+    background-color: white;
   }
   
   .card-bg{

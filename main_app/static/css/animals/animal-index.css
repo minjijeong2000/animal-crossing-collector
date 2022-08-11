@@ -1,8 +1,14 @@
+
+body{
+  background-image: url('../animals/background.png'); 
+}
+
 .card-container {
     padding: 0 30px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    font-family: 'Signika', sans-serif;
   }
   
   .card {
@@ -10,6 +16,7 @@
     margin: 10px;
     border: var(--borders);
     box-shadow: var(--card-box-shadow);
+    background-color: white;
   }
   
   .card-content {

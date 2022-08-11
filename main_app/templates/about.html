@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
-
+{% load static %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}"/>
+{% endblock %}
 {% block content %}
 
 <h1>About the Animal Crossing Collector</h1>
 <hr />
 <p class="page-content">
-  I like long romantic walks down the produce aisle. Also, I am currently job seeking!
+  The following django application is called Animal Crossing Collector! Animal Crossing Collector is an application where you can add your animal crossing characters, feed them, and give them fruits. You can also update them, delete them, create characters, and create fruits. This is the place where you can entertain yourself!
 </p>
-
+<img id="image" src="https://media.giphy.com/media/RhBjHtebDhkc9CP6B3/giphy.gif" alt="">
 {% endblock %}

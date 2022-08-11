@@ -3,6 +3,7 @@ main {
     align-items: flex-end;
     justify-content: flex-start;
     min-height: auto;
+    font-family: 'Signika', sans-serif;
   }
   
   .card {
