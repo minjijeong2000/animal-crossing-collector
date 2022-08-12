@@ -130,7 +130,7 @@
     <h3>{{ animal.name }}'s Fruits</h3>
     <div class="subsection-content">
       {% if animal.fruits.count %}
-        {% for animal in animal.fruits.all %}
+        {% for fruit in animal.fruits.all %}
           <div class="toy-container">
             <div 
               class="color-block"
